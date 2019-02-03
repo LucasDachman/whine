@@ -25,9 +25,9 @@ function onCalcSpeed() {
 
   if (Tone.context.state !== 'running') {
     Tone.context.resume();
+  }
   osc.frequency.value = average
 }
 
-var osc = new Tone.Oscillator(440, "sine").toMaster().start();
-Tone.Transport.start();
-
+var osc = new Tone.Oscillator(440, "sine").toMaster().start()
+Tone.Transport.start()
