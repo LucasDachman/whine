@@ -17219,6 +17219,6 @@ function onCalcSpeed() {
   osc.frequency.value = average
 }
 
-var osc = new Tone.Oscillator(440, "sine").toMaster().start()
+var osc = new Tone.Oscillator(100, "sine").toMaster().start()
 Tone.Transport.start()
 },{"lodash":1,"mouse-speed":2,"tone":3}]},{},[4]);
