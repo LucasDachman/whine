@@ -22,6 +22,9 @@ function onCalcSpeed() {
   speeds[index] = map(magnitude, 0,50, 80, 800)
   index = index === size ? 0 : index + 1
   const average = _.sum(speeds) / size
+
+  if (Tone.context.state !== 'running') {
+    Tone.context.resume();
   osc.frequency.value = average
 }
 
