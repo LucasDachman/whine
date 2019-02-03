@@ -1,6 +1,10 @@
 const Tone = require('tone')
 const MouseSpeed = require('mouse-speed')
+const _ = require('lodash')
 const speed = new MouseSpeed()
+const size = 40
+const speeds = new Array(40).fill(0)
+let index = 0
 speed.init(onCalcSpeed)
 
 
@@ -15,7 +19,10 @@ function onCalcSpeed() {
   // a2 + b2 = c2
   const magnitude = Math.sqrt(Math.pow(speedX, 2) + Math.pow(speedY, 2))
   console.log('speed', magnitude)
-  osc.frequency.value = map(magnitude, 0,50, 80, 800)
+  speeds[index] = map(magnitude, 0,50, 80, 800)
+  index = index === size ? 0 : index + 1
+  const average = _.sum(speeds) / size
+  osc.frequency.value = average
 }
 
 var osc = new Tone.Oscillator(440, "sine").toMaster().start();

@@ -13,6 +13,8 @@
     "mouse-speed": "^2.0.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "lodash": "^4.17.11",
     "tone": "^13.4.9"
   }
 }
