@@ -13,5 +13,6 @@
     "mouse-speed": "^2.0.1"
   },
   "devDependencies": {
+    "tone": "^13.4.9"
   }
 }
